@@ -1,0 +1,66 @@
+.glyph_accordion
+{
+	margin: 5px;
+	border: 1px solid #777;
+	border-radius: 4px;
+}
+
+.glyph_accordion .header
+{
+	background: #ccc;
+}
+
+.glyph_accordion .header .label
+{
+	margin-left: 5px;
+}
+
+
+.glyph_accordion .contents
+{
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.4s ease-out;
+}
+
+.glyph_accordion .contents.expanded
+{
+	transition: max-height 0.4s ease-in;
+}
+
+
+.glyph_accordion .header .button
+{
+	display: inline-block;
+	
+	margin: 2px;
+	margin-left: 10px;
+	
+	height: 15px;
+	width: 15px;
+	
+	background-size: 15px 15px;
+	/*background-image: url( 'someimage.png' );*/
+	background-repeat: no-repeat;
+	background-color: #595959;
+	
+	border-radius: 50%;
+	font-size: 14px;
+	color: #fff;
+}
+
+.glyph_accordion .header .button:before
+{
+	padding-left: 3px;
+	content: "+";
+	position: relative;
+	top: -1px;
+}
+
+.glyph_accordion .header .button.expanded:before
+{
+	padding-left: 5px;
+	content: "-";
+	position: relative;
+	top: -2px;
+}

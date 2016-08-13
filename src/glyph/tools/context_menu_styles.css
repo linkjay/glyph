@@ -1,0 +1,58 @@
+#glyph_contextMenu,
+#glyph_contextMenu *
+{
+	cursor: default;
+	font-family: sans-serif;
+	-webkit-user-select: none;
+}
+
+#glyph_contextMenu,
+#glyph_contextMenu .subMenu
+{
+	position: absolute;
+	background-color: #fff;
+	padding: 5px 0px 5px 0px;
+	border: 1px solid #bababa;
+	box-shadow 2px 2px 5px #656565;
+	left: 100%;
+	margin-top: -15px;
+	margin-left: -5px;
+}
+
+#glyph_contextMenu .subMenu
+{
+	white-space: nowrap;
+	display: none;
+}
+
+#glyph_contextMenu .subMenu.hover
+{
+	display: block;
+}
+
+#glyph_contextMenu .item
+{
+	padding: 6px 15px 6px 15px;
+}
+
+#glyph_contextMenu .item:hover
+{
+	background-color: #ccc;
+}
+
+#glyph_contextMenu > .item:last-of-type:after,
+#glyph_contextMenu .subMenu > .item:last-of-type:after
+{
+	background: none;
+}
+
+#glyph_contextMenu .arrow
+{
+	position: absolute;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 4px solid #7a7a7a;
+	display: inline-block;
+	right: 5px;
+	margin-top: 5px;
+}

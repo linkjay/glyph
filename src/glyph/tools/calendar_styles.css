@@ -1,0 +1,168 @@
+/* main container */
+.glyph_calendar
+{
+	margin-top: 15px;
+	
+	width: 400px;
+	height: 255px;
+	
+	background-color: #C7E2ED;
+	
+	border: 1px solid #A8A8A8;
+	
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+/* top bar for month and year */
+.glyph_calendar .TopBar
+{
+	width: 380px;
+	height: 20px;
+	
+	margin: 0 auto;
+	margin-top: 5px;
+	
+	border-radius: 5px;
+	
+	background-color: #DEF5FF;
+	
+	padding: 5px;
+}
+
+/* month */
+.glyph_calendar .TopBar .MonthContainer
+{
+	float: left;
+	width: 150px;
+}
+
+/* year */
+.glyph_calendar .TopBar .YearContainer
+{
+	float: right;
+	width: 100px;
+}
+
+/* labels and buttons */
+.glyph_calendar .TopBar .TopLabel
+{
+	float: left;
+	display: block;
+	
+	color: #000;
+	font-weight: bold;
+	
+	text-align: center;
+	
+	margin: 0 auto;
+}
+
+.glyph_calendar .TopBar .TopSelect
+{
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+.glyph_calendar .TopBar .TopButton
+{
+	color: #636363;
+	
+	position: relative;
+	top: -3px;
+	
+	font-size: 22px;
+	font-weight: bold;
+	
+	padding-left: 4px;
+	padding-right: 4px;
+	
+	background-color: #C4C4C4;
+	border-radius: 5px;
+	
+	cursor: pointer;
+}
+
+.glyph_calendar .TopBar .TopButton.Left
+{
+	float: left;
+}
+
+.glyph_calendar .TopBar .TopButton.Right
+{
+	float: right;
+}
+
+/* day container */
+.glyph_calendar .DayContainer
+{
+	width: 380px;
+	height: 207px;
+	
+	margin: 0 auto;
+	margin-top: 3px;
+	
+	border-radius: 5px;
+	
+	background-color: #E3E3E3;
+	
+	padding: 2px;
+}
+
+/* week legend */
+.glyph_calendar .WeekLegend
+{
+	word-spacing: 38px;
+	font-weight: bold;
+
+	width: 335px;
+	margin: 0 auto;
+	
+	height: 20px;
+}
+
+.glyph_calendar .Spacer
+{
+	border-bottom: 1px solid #bbb;
+}
+
+.glyph_calendar .Day
+{
+	float: left;
+	
+	width: 40px;
+	height: 21px;
+	
+	margin-left: 7px;
+	margin-right: 7px;
+	margin-top: 7px;
+	
+	padding-top: 2px;
+	
+	color: #fff;
+	text-align: center;
+	
+	background-color: #aaa;
+	
+	border-radius: 5px;
+	
+	cursor: pointer;
+}
+
+.glyph_calendar .Day.Greyed
+{
+	background-color: #ccc;
+}
+
+.glyph_calendar .Day.Highlighted
+{
+	background-color: #7DB5B5;
+}
+
+.glyph_calendar .Day.Selected
+{
+	background-color: #B5A37D;
+}

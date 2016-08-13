@@ -1,0 +1,66 @@
+.glyph_modal
+{
+	z-index: 800;
+	font-family: sans-serif;
+	
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+	
+	width: 40%;
+	height: 300px;
+	
+	background-color: #eee;
+	border-radius: 5px;
+	
+	box-shadow: 0 0 20px 5px #888888;
+	
+	padding: 10px;
+}
+
+.glyph_modal .header
+{	
+	font-size: 20px;
+	border-bottom: 1px solid #526F9B;
+}
+
+.glyph_modal .header .close
+{
+	width: 20px;
+	height: 20px;
+	background-color: #AB2F2F;
+	float: right;
+	text-align: center;
+	border-radius: 10px;
+	color: #fff;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.glyph_modal .content
+{	
+	padding: 15px;
+	overflow-wrap: break-word;
+}
+
+/* overlay */
+.glyph_modal_overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 100%;
+	
+	background-color: black;
+	opacity: 0.6;
+	
+	z-index: 500;
+}

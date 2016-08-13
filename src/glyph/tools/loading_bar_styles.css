@@ -1,0 +1,44 @@
+.glyph_loadingBarOuter
+{		
+	margin: 0 auto;
+	height: 20px;
+	width: 90%;
+	border: 1px solid #949494;
+	background-color: #F7EBC3;
+}
+
+.glyph_loadingBar
+{		
+	height: 8px;
+	width: 0%;
+	background-color: #7ABD4D;
+	border-top: 12px solid #84CC53;
+	transition: background-color 1.0s ease,
+				border-color 1.0s ease,
+				width 1.0s ease;
+}
+
+.glyph_loadingBar.pulse
+{
+	background-color: #81D649;
+	border-top: 12px solid #8AE64E;
+}
+
+.glyph_loadingBarText
+{		
+	line-height: 16px;
+	font-size: 16px;
+	text-align: center;
+	
+	position: relative;
+	top: -18px;
+	
+	color: #000000;
+	font-weight: bold;
+	
+	 text-shadow:
+		   -1px -1px 0 #FFFFFF,  
+			1px -1px 0 #FFFFFF,
+			-1px 1px 0 #FFFFFF,
+			 1px 1px 0 #FFFFFF;
+}

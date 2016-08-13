@@ -1,0 +1,22 @@
+{
+  "name": "@dougty/glyph",
+  "version": "1.0.0",
+  "author": "Doug Tyrrell",
+  "description": "yet another javascript library",
+  "license": "BSD-2-Clause",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DougTy/glyph"
+  }
+}
