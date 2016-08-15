@@ -13,22 +13,22 @@ Hopefully the example below is self-descriptive enough.
 ```
 [
 	{
-		label: 'item 1'
-		click: function() { doSomething(); }
+		label: 'item 1',
+		click: function() { alert( 'item 1 clicked' ); }
 	},
 	{
-		label: 'item 2'
-		click: "doSomething2();"
+		label: 'item 2',
+		click: "alert( 'item 2 clicked' );"
 	},
 	{
-		label: 'item 3'
+		label: 'item 3',
 		submenu:
 			[
 				{
-					label: 'item 4'
-					click: "doSomething3();"
+					label: 'item 4',
+					click: "alert( 'item 4 clicked' );"
 				}
 			]
-	},
+	}
 ]
 ```
