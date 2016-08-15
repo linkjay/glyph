@@ -88,8 +88,8 @@
 
 #glyph_lightbox .content .button
 {
-	border-right: 10px solid #fff; 
-	border-bottom: 10px solid #fff;
+	border-right: 12px solid #000; 
+	border-bottom: 12px solid #000;
 	width: 30px; height: 30px;
 	transform: rotate(-45deg);
 	
@@ -99,11 +99,20 @@
 	cursor: pointer;
 	
 	position: absolute;
-	top: 50%;
+	bottom: 35%;
 	
 	/* stops jittering on opacity transition */
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
+}
+
+#glyph_lightbox .content .button::before
+{
+	display: inline-block;
+	content: '';
+	border-right: 10px solid #fff; 
+	border-bottom: 10px solid #fff;
+	width: 30px; height: 30px;
 }
 
 #glyph_lightbox .content:hover .button
