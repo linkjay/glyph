@@ -15,9 +15,14 @@ Returns **[[Array]]**
 - `object` **[Object]**
 
 ## glyph.clone( `array` )
-Duplicate an `array` and break reference to the original  
+Duplicate an `array`, breaking references to the original  
 Returns **[[Array]]**
 - `array` **[Array]**
+
+## glyph.copy( `object` )
+Duplicate an `object`, breaking references to the original  
+Returns **[[Object]]**
+- `object` **[Object]**
 
 ## glyph.forEach( `array`, `function` )
 Calls `function` for each element in `array`

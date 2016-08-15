@@ -24,6 +24,11 @@ glyph.clone = function( arr )
 		return arr.slice( 0 );
 	};
 	
+glyph.copy = function( obj )
+	{
+		return JSON.parse( JSON.stringify( obj ) );
+	};
+	
 glyph.forEach = function( el, func )
 	{
 		if ( typeof Array.prototype.forEach != 'function' )
