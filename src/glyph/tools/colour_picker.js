@@ -95,6 +95,13 @@ glyph.colourPickerClose = function()
 		if ( !colourPickerPopup )
 			return;
 		
+		if ( colourPickerActive.glyph_colourCallback )
+		{
+			var hex = colourPickerActive.value;
+			var rgb = glyph.hexToRGB( hex );
+			colourPickerActive.glyph_colourCallback( hex, rgb );
+		}
+		
 		colourPickerSelecting = false;
 		colourPickerPopup.style.display = 'none';
 		colourPickerActive = false;	
@@ -163,7 +170,7 @@ function setupPickerPopup( width, height )
 		rgb.setAttribute( 'type', 'text' );
 		rgb.setAttribute( 'id', 'glyph_colourPickerRGB' );
 		rgb.value = '255, 255, 255';
-		rgb.onchange = function() { glyph.colourPickerSet( 'rgb', this ); };
+		rgb.onchange = function() { glyph.colourPickerChange( 'rgb', this ); };
 		container.appendChild( rgb );
 		
 		var hex = document.createElement( 'input' );
@@ -172,7 +179,7 @@ function setupPickerPopup( width, height )
 		hex.setAttribute( 'type', 'text' );
 		hex.setAttribute( 'id', 'glyph_colourPickerHex' );
 		hex.value = '#FFFFFF';
-		hex.onchange = function() { glyph.colourPickerSet( 'hex', this ); };
+		hex.onchange = function() { glyph.colourPickerChange( 'hex', this ); };
 		container.appendChild( hex );
 		
 		rgb.style.marginRight = '15px';
@@ -198,6 +205,15 @@ glyph.colourPickerChoose = function( div )
 		
 		ignoreClick = true;
 		setTimeout( function() { ignoreClick = false; }, 100 );
+	};
+	
+glyph.colourPickerSet = function( div, colour )
+	{		
+		if ( colour.substr( 0, 1 ) != '#' )
+			colour = glyph.rgbStringToHex( colour );
+		
+		div.value = colour;
+		div.style.backgroundColor = colour;
 	};
 
 glyph.colourPicker = function( params )
@@ -248,10 +264,13 @@ glyph.colourPicker = function( params )
 		
 		el.onclick = function() { glyph.colourPickerChoose( el ); };
 		
+		if ( params.callback )
+			el.glyph_colourCallback = params.callback;
+		
 		return el;
 	};
 
-glyph.colourPickerSet = function( type, input )
+glyph.colourPickerChange = function( type, input )
 	{
 		var hex = input.value;
 		var rgb = input.value;
@@ -273,7 +292,14 @@ glyph.ready( function()
 		for ( var i = 0; i < colourPickers.length; i++ )
 		{
 			var picker = colourPickers[i];
-			glyph.colourPicker( { el: picker } );
+			var params = picker.getAttribute( 'glyph-pickerparams' );
+			if ( params )
+			{
+				params = eval( '(' + params + ')' );
+				glyph.colourPicker( { el: picker, input: params.input, colour: params.colour, callback: eval( params.callback ) } );
+			}
+			else
+				glyph.colourPicker( { el: picker } );
 		}
 	});
 
