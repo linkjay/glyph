@@ -1,6 +1,11 @@
 # math
 
 ## glyph.rand( `min`, `max` )
+Returns **[Float]** between `min` and `max`
+- `min` **[Float]**
+- `max` **[Float]**
+
+## glyph.randInt( `min`, `max` )
 Returns **[Integer]** between `min` and `max`
 - `min` **[Integer]**
 - `max` **[Integer]**

@@ -4,6 +4,11 @@ glyph.TwoPi = 2 * Math.PI;
 
 glyph.rand = function( min, max )
 	{
+		return Math.random() * ( max - min ) + min;
+	};
+
+glyph.randInt = function( min, max )
+	{
 		return Math.floor( ( Math.random() * max ) + min );
 	};
 	
