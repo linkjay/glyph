@@ -8,7 +8,8 @@
 glyph is meant to be as compatible as possible, and should not interfere with any other libraries.  
 By default, the only global variable is `glyph`
 
-However, if you aren't using any other libraries, you can enable glyph's shortcut functions to simplify your code.
+However, if you aren't using any other libraries, you can enable glyph's shortcut functions to simplify your code.   
+Alternatively, you can use the following to manage these variables manually: `var $ = glyph, $$ = glyph.sel;`
 
 ## glyph.init( `[variable]` )
 Sets glyph shortcut functions to `$` and `$$`  
