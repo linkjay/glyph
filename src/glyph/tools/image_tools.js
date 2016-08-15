@@ -197,8 +197,7 @@ function lightboxClose()
 	
 	lightbox.style.opacity = '0';
 	
-	var transition = getComputedStyle( lightbox ).transition;
-	var delay = /opacity (.+?)s/.exec( transition )[1];
+	var delay = getComputedStyle( lightbox ).getPropertyValue( 'transition-duration' );
 	delay *= 1000;
 	
 	setTimeout( function() { lightbox.style.display = 'none'; }, delay );
