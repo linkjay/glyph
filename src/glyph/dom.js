@@ -5,8 +5,10 @@ glyph.id = function( id )
 		return document.getElementById( id );
 	};
 	
-glyph.sel = function( sel )
+glyph.sel = function( sel, parent )
 	{
+		if ( parent )
+			return parent.querySelectorAll( sel );
 		return document.querySelectorAll( sel );
 	};
 	
