@@ -2,13 +2,13 @@
 
 ## glyph.event( `target`, `name`, `callback` )
 Create an event callback
-- `target` **[String]** target event name
-- `name` **[String]** some unique name for this callback
-- `callback` **[Function]** function to call on event trigger
+- `target` **[DOMElement]** target element
+- `name` **[String]** event name
+- `callback` **[Function]**
 
 ## glyph.removeEvent( `target`, `name`, `callback` )
 Remove an event callback
-- `target` **[String]**
+- `target` **[DOMElement]**
 - `name` **[String]**
 - `callback` **[Function]**
 
