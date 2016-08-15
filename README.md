@@ -9,6 +9,7 @@ yet another javascript library
  * context menus, drag and drop
  * image sliders and lightbox
  * loading bars, modals
+ * canvas particles!
  * and more
 
 ### [Documentation](docs/index.md)
