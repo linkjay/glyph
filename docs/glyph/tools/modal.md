@@ -10,11 +10,11 @@ Returns **[DOMElement]** of modal's content element
 	- <sub><sup>optional</sup></sub> `header` **[Boolean]** create a header at the top of the modal?  
 		<sup>default: **true**</sup>
 	- <sub><sup>optional</sup></sub> `close` **[Boolean]** create a close button in the header?  
-		<sup>default: **'true'**</sup>
+		<sup>default: **true**</sup>
 	- <sub><sup>optional</sup></sub> `title` **[String]** title to put in the modal's header  
 		<sup>default: **'Modal'**</sup>
 	- <sub><sup>optional</sup></sub> `animate` **[Boolean]** animate opening and closing of the modal?  
-		<sup>default: **'true'**</sup>
+		<sup>default: **true**</sup>
 		
 ## glyph.modalClose()
 Close the currently open modal
@@ -34,4 +34,4 @@ Attempt to automatically size the modal to its contents
 ## glyph.modalSize( `width`, `height`, `[useHeaderDiff]` )
 Size the modal to the specified `width` and `height`
 - <sub><sup>optional</sup></sub> `useHeaderDiff` **[Boolean]** add the header's height to the final size  
-	<sup>default: **'true'**</sup>
+	<sup>default: **true**</sup>
