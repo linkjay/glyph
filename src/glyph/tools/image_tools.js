@@ -120,6 +120,9 @@ glyph.imageSlider = function( slider, params )
 	
 glyph.imageSliderSize = function( slider )
 	{
+		if ( !slider.children[0].complete )
+			return slider.children[0].onload = function() { glyph.imageSliderSize( slider ); };
+		
 		// inherit width and height from first child if there is none
 		if ( !slider.style.width || !slider.style.height )
 		{
