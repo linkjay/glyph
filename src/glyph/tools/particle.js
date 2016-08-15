@@ -255,7 +255,7 @@ glyph.event( window, 'focus', function()
 		// if the tab's been out of focus for a while
 		if ( particleInit )
 		{
-			cancelAnimationRequest( lastRequest );
+			cancelAnimationFrame( lastRequest );
 			lastRequest = requestAnimationFrame( draw );
 		}
 	});
