@@ -87,9 +87,9 @@ function dragMouseMove( e )
 			
 		var axis = current_params.axis;
 		if ( axis == 'both' || axis == 'x' )
-			current_element.style.left = glyph.mousePos.x - drag_offset.x + glyph.pageScroll().top + 'px';
+			current_element.style.left = glyph.mousePos.x - drag_offset.x + glyph.pageScroll().left + 'px';
 		if ( axis == 'both' || axis == 'y' )
-			current_element.style.top = glyph.mousePos.y - drag_offset.y + glyph.pageScroll().left + 'px';
+			current_element.style.top = glyph.mousePos.y - drag_offset.y + glyph.pageScroll().top + 'px';
 		
 		var pos = glyph.mousePos;	
 		if ( axis == 'x' )
