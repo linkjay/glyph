@@ -1,7 +1,7 @@
 # glyph
 yet another javascript library
 
-`glyph` is a collection of javascript functions, utilities, and tools that I've written over the years to make my life easier, aiming to use simple, fast code with as little bloat as possible and no dependencies. It can be used alongside other javascript libraries without a problem.
+`glyph` is a collection of javascript functions, utilities, and tools that I've written over the years to make my life easier, aiming to use simple, fast code with as little bloat as possible and no dependencies. It can be used alongside other javascript libraries without a problem. Supports all modern browsers (IE9+)
 
 ### Features:
  * ajax, dom, math, mouse & mouse utilities
