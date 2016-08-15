@@ -59,6 +59,9 @@ glyph.accordion = function( container )
 		container.label = label;
 		container.contents = contents;
 		
+		if ( glyph.hasClass( container, 'autoexpand' ) )
+			setTimeout( function() { glyph.accordionToggle( button, true ); }, 100 );
+		
 		return container;	
 	};
 	
