@@ -7,6 +7,11 @@ glyph.empty = function( str )
 		
 		return false;
 	};
+	
+glyph.insertStrAt = function( txt, str, index )
+	{
+		return str.substr( 0, index ) + txt + str.substr( index );
+	};
 
 glyph.concat = function( object, encode )
 	{
@@ -71,6 +76,22 @@ glyph.strcmp = function ( a, b )
 		if ( a.toString() < b.toString() ) return -1;
 		if ( a.toString() > b.toString() ) return  1;
 		return 0;
+	};
+	
+glyph.split = function( str, del, limit )
+	{
+		var arr = str.split( del );
+		var res = arr.splice( 0, limit );
+		res.push( arr.join( del ) );
+		return res;
+	};
+
+glyph.regex = function( reg, str )
+	{
+		var matches, output = [];
+		while ( matches = reg.exec( str ) )
+			output.push( matches[1] );
+		return output;
 	};
 	
 }());

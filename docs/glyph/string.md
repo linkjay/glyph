@@ -4,6 +4,12 @@
 Returns **[Boolean]** if `str` is empty  
 - `str` **[String]**
 
+## glyph.insertStrAt( `newtext`, `string`, `index` )
+Inserts `newtext` into `string` at `index`  
+- `string` **[String]** string to insert text into
+- `newtext` **[String]** new text being inserted
+- `index` **[Integer]** character index to insert text at
+
 ## glyph.concat( `object`, `[encode]` )
 Concatenate `object` into a key, value string for URLs (with &'s and ='s)  
 Returns **[String]**
@@ -47,3 +53,16 @@ Returns **`-1`** if `a` comes after `b`
 Returns **`1`** if `b` comes after `a`  
 - `a` **[String]**
 - `b` **[String]**
+
+## glyph.split( `str`, `delimiter`, `limit` )
+Split `str` by a `delimiter` with a `limit` on how many times it splits  
+Returns **[Array]**  
+- `str` **[String]**
+- `delimiter` **[String]**
+- `limit` **[Integer]**
+
+## glyph.regex( `regex`, `str` )
+Execute `regex` on `str` and return all capture group matches as an array  
+Returns **[Array]**  
+- `regex` **[RegEx]**
+- `str` **[String]**
