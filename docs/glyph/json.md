@@ -8,3 +8,11 @@ var data = glyph.parseJSON( json );
 if ( !data )
 	throw 'error';
 ```
+
+## glyph.jsonp( `url`, `callback` )
+Request JSONP from `url`, which will be received in `callback`  
+- `url` **[String]**
+- `callback` **[String or Function]**
+
+Callback function arguments
+ - `json` **[Object]**
