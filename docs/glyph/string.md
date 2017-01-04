@@ -66,3 +66,9 @@ Execute `regex` on `str` and return all capture group matches as an array
 Returns **[Array]**  
 - `regex` **[RegEx]**
 - `str` **[String]**
+
+## glyph.addParam( `url`, `param` )
+Adds `param` to the end of `url`, prefixed by ? or & as needed  
+Returns **[String]**  
+- `url` **[String]**
+- `param` **[String]**

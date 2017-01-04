@@ -94,4 +94,10 @@ glyph.regex = function( reg, str )
 		return output;
 	};
 	
+glyph.addParam = function( url, param )
+	{
+		url += ( url.match( /\?/g ) ? '&' : '?' ) + param;
+		return url;
+	};
+	
 }());
