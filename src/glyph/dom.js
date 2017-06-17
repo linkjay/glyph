@@ -30,6 +30,9 @@ glyph.removeClass = function( el, cls )
 
 glyph.hasClass = function( el, cls )
 	{
+		if ( !el.className || el.className == '' )
+			return false;
+			
 		var classList = el.className.split( ' ' );
 		for ( var i in classList )
 			if ( classList[i] == cls )
