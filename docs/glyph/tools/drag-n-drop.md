@@ -18,6 +18,8 @@ Initialize a `container` as having draggable elements
 - `.glyph_drag-active` used for styling the element currently being dragged
 - `.glyph_drag-frozen` designates an element that has a frozen position
 - `.glyph_drag-disabled` designates an element that cannot be dragged
+- `.glyph_drag-lockbottom` designates an element that is locked to the bottom
+- `.glyph_drag-locktop` designates an element that is locked to the top
 
 ## initializing a draggable container in HTML
 Draggable containers can also be created on page load in HTML:

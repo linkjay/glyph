@@ -117,6 +117,28 @@ function dragMouseMove( e )
 					var scootYa = mouseOffset.y < el.offsetHeight / 2;
 					var scootYb = mouseOffset.y > el.offsetHeight - el.offsetHeight / 2;
 
+					if ( glyph.hasClass( el, 'glyph_drag-lockbottom' ) )
+					{
+						if ( scootYa )
+							scootYb = true;
+						if ( scootXa )
+							scootXb = true;
+
+						scootYa = false;
+						scootXa = false;
+					}
+
+					if ( glyph.hasClass( el, 'glyph_drag-locktop' ) )
+					{
+						if ( scootYb )
+							scootYa = true;
+						if ( scootXb )
+							scootXa = true;
+
+						scootYb = false;
+						scootXb = false;
+					}
+
 					if ( axis == 'both' || axis == 'x' )
 					{
 						if ( scootXa )
