@@ -6,7 +6,7 @@ glyph.Particle = function( context )
 		
 		this.life = 0;
 		this.life_offset = 0;
-		this.lifespan = 1000;
+		this.lifespan = null;
 		this.life_start = Date.now();
 		
 		this.position = { x: 0, y: 0 };
@@ -89,11 +89,10 @@ glyph.Particle = function( context )
 			{
 				this.life = Date.now() - this.life_start + this.life_offset;
 				
-				if ( this.lifespan )
+				if ( this.lifespan !== null )
 				{
-					if ( this.lifespan )
-						if ( this.life > this.lifespan )
-							return glyph.particle.delete( this );
+					if ( this.life > this.lifespan )
+						return glyph.particle.delete( this );
 					
 					var lifeMul = this.life / this.lifespan;
 					
@@ -125,11 +124,10 @@ glyph.Particle = function( context )
 				}
 				else
 				{
-					if ( !this.lifespan )
-						if ( this.position.x > this.context.canvas.width ||
-							this.position.y > this.context.canvas.height ||
-							this.position.x < 0 || this.position.y < 0 )
-								return glyph.particle.delete( this );
+					if ( this.position.x > this.context.canvas.width ||
+						this.position.y > this.context.canvas.height ||
+						this.position.x < 0 || this.position.y < 0 )
+							return glyph.particle.delete( this );
 				}
 				
 				if ( this.acceleration )
