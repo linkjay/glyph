@@ -294,7 +294,7 @@ glyph.sortChildren = function( parent, attr, reverse )
 		if ( reverse )
 			list.reverse();
 		
-		glyph.forEachEl( list, function( el, i ) { parent.appendChild( el ); } );
+		glyph.forEach( list, function( el, i ) { parent.appendChild( el ); } );
 	};
 	
 glyph.frameContent = function( frame )
