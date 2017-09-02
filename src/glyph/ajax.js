@@ -58,10 +58,13 @@ glyph.ajax = function( params, attemptNum )
 																										args: params.args
 																									} ); }, false );
 		
-		var contentType = params.contentType || 'application/x-www-form-urlencoded';
+		var contentType = 'application/x-www-form-urlencoded';
 		if ( params.binary === true )
 			contentType = 'application/octet-stream';
-		xmlhttp.setRequestHeader( 'Content-type', contentType );
+		if ( typeof params.contentType !== 'undefined' )
+			contentType = params.contentType
+		if ( contentType )
+			xmlhttp.setRequestHeader( 'Content-type', contentType );
 		
 		if ( params.data && method != 'GET' )
 		{		
