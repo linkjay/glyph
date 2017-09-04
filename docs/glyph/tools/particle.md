@@ -1,4 +1,4 @@
-# modal
+# particle
 
 ## glyph.particle.init( `canvas` )
 Prepares canvas for use with particles  

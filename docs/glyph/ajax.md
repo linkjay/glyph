@@ -18,6 +18,7 @@ Ajax helper function
 	- <sub><sup>optional</sup></sub> `callback_progress` **[[ajaxProgressCallback](#ajaxprogresscallback)]** 'progress' event callback
 	- <sub><sup>optional</sup></sub> `maxTries` **[Integer]** maximum number of tries  
 		<sup>default: **1**</sup>
+	- <sub><sup>optional</sup></sub> `responseType` **[String]**
 
 ### ajaxCallback
 - `arguments` **[Object]**
