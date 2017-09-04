@@ -2,8 +2,12 @@
 
 function sendCallback( success, xmlhttp, params )
 {
+	var response = xmlhttp.response;
+	if ( !params.responseType || params.responseType == '' || params.responseType == 'text' )
+		response = xmlhttp.responseText;
+
 	params.callback( {
-						response: xmlhttp.responseText,
+						response: response,
 						success: success,
 						status: xmlhttp.status,
 						request: xmlhttp,
@@ -65,6 +69,9 @@ glyph.ajax = function( params, attemptNum )
 			contentType = params.contentType
 		if ( contentType )
 			xmlhttp.setRequestHeader( 'Content-type', contentType );
+
+		if ( params.responseType )
+			xmlhttp.responseType = params.responseType;
 		
 		if ( params.data && method != 'GET' )
 		{		
