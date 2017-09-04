@@ -18,11 +18,9 @@ glyph.canDownload = function()
 		return false;
 	};
 	
-glyph.downloadFile = function( data, filename )
+glyph.downloadFile = function( data, filename, mimeType )
 	{		
-		var mime_type = 'application/octet-stream';
-		var encoding = 'utf-8';
-		
+		var mime_type = mimeType || 'application/octet-stream';
 		var blob = new Blob( [ data ], { type: mime_type } );
 		
 		// ie
