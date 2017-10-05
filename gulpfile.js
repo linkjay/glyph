@@ -23,7 +23,7 @@ gulp.task( 'lint', function()
 	{
 		return gulp
 			.src( 'src/**/*.js' )
-			.pipe( jshint() )
+			.pipe( jshint( { 'asi': true } ) )
 			.pipe( jshint.reporter( 'unix' ) )
 			.on( 'error', catchError );
 	});
