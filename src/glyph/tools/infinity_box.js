@@ -51,6 +51,10 @@ function containerScroll( container, offset )
 			row.className = 'row'
 			row.setAttribute( 'glyph_rowid', id )
 			row.innerHTML = container.data[id] || ''
+
+			if ( row.innerHTML == '' )
+				continue
+
 			container.appendChild( row )
 			container.rows[id] = row
 
@@ -64,14 +68,14 @@ function containerScroll( container, offset )
 	}
 
 	// update label
-	container.label.innerText = 'viewing ' + startID + '-' + (id-1) + ' of ' + container.data.length
+	container.label.innerText = 'viewing ' + (startID+1) + '-' + id + ' of ' + container.data.length
 }
 
 function updateContainerData( container, data )
 {
 	container.data = data
 	
-	var dataHeight = container.rowHeight * container.data.length
+	var dataHeight = (container.rowHeight * container.data.length) + (container.rowHeight * 1)
 	container.dataHeight = dataHeight
 
 	container.padder.style.height = dataHeight + 'px'
