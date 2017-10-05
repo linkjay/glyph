@@ -1,5 +1,20 @@
 (function(){
 
+function attachValueListeners( par, container, parel, parid )
+{
+	glyph.forEach( par.children, function( el, eli )
+	{
+		if ( el.tagName.toLowerCase() == 'input' )
+			glyph.event( el, 'keyup', function( e )
+				{
+					el.setAttribute( 'value', e.target.value )
+					container.data[parid] = parel.innerHTML
+				})
+		
+		attachValueListeners( el, container, parel, parid )
+	})
+}
+
 function containerScroll( container, offset )
 {
 	if ( typeof offset == 'undefined' )
@@ -18,6 +33,7 @@ function containerScroll( container, offset )
 		var row = container.rows[k]
 		if ( k < id || k > id + maxRows )
 		{
+			container.data[k] = row.innerHTML
 			container.removeChild( row )
 			delete container.rows[k]
 		}
@@ -33,9 +49,12 @@ function containerScroll( container, offset )
 		{
 			row = glyph.create( 'div' )
 			row.className = 'row'
-			row.innerHTML = container.data[id]
+			row.setAttribute( 'glyph_rowid', id )
+			row.innerHTML = container.data[id] || ''
 			container.appendChild( row )
 			container.rows[id] = row
+
+			attachValueListeners( row, container, row, id )
 		}			
 		
 		var y = i * rowHeight
@@ -57,7 +76,14 @@ function updateContainerData( container, data )
 
 	container.padder.style.height = dataHeight + 'px'
 
+	for ( var k in container.rows )
+	{
+		var row = container.rows[k]
+		container.removeChild( row )
+		delete container.rows[k]
+	}
 	container.rows = []
+
 	containerScroll( container )
 }
 
@@ -78,7 +104,7 @@ function containerFind( container, value )
 	for ( var i in container.data )
 	{
 		var row = container.data[i]
-		if ( row.indexOf( value ) !== -1 )
+		if ( row.toLowerCase().indexOf( value.toLowerCase() ) !== -1 )
 			found.push( i )
 	}
 
@@ -89,11 +115,18 @@ function containerFind( container, value )
 
 function jumpToFind( container, j )
 {
+	if ( container.findResults.length === 0 )
+	{
+		container.findNumLabel.innerText = 'not found'
+		return
+	}
+
 	container.findNum = j
 	if ( container.findNum < 0 )
 		container.findNum = container.findResults.length-1
 	if ( container.findNum >= container.findResults.length )
 		container.findNum = 0
+
 	container.findNumLabel.innerText = (container.findNum+1) + ' / ' + container.findResults.length
 
 	var rowHeight = container.rowHeight

@@ -2,6 +2,7 @@
 {
 	height: 408px;
 	width: 800px;
+	position: relative;
 }
 
 .glyph_infinityBox .inner
@@ -21,8 +22,10 @@
 	z-index: 1000;
 	position: relative;
 	background: #c1c1c1;
-	height: 1.3em;
+	height: 21px;
 	line-height: 20px;
+    width: 100%;
+	color: black;
 }
 
 .glyph_infinityBox .hud .label
