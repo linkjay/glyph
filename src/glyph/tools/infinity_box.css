@@ -19,7 +19,7 @@
 
 .glyph_infinityBox .hud
 {
-	z-index: 1000;
+	z-index: 100;
 	position: relative;
 	background: #c1c1c1;
 	height: 21px;
