@@ -140,7 +140,7 @@ function jumpToFind( container, j )
 	containerScroll( container, desiredScroll )
 }
 
-glyph.updateInfinityData = updateContainerData;
+glyph.updateInfinityBoxData = updateContainerData;
 
 glyph.createInfinityBox = function( el )
 	{
@@ -223,6 +223,12 @@ glyph.createInfinityBox = function( el )
 		containerScroll( container )
 
 		return container
+	};
+
+glyph.scrollInfinityBoxTo = function( container, scrollTo )
+	{
+		container.scrollTop = scrollTo
+		containerScroll( container, scrollTo )
 	};
 
 }());
